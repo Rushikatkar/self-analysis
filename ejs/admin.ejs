@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>All Company List</title>
+</head>
+<style>
+    table {
+        margin: auto;
+        overflow: hidden;
+        position: inherit;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(130, 227, 197);
+        border-radius: 10px;
+        border: "1px";
+        border-color: "1px solid black";
+    }
+
+    .heading {
+        text-align: center;
+        color: white;
+    }
+
+    body {
+        text-align: center;
+        background-color: dimgrey;
+
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo" behavior="scroll" direction="LEFT" scrollamount="1"> <a href="/sap"
+                    class="link_main">SELF&nbsp;ANALYSIS&nbsp;&amp;&nbsp;PLACEMENT</a></h3>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <!-- <li><a href="/sap">HOME</a></li> -->
+                <!-- <li><a href="#">CONTACTS</a></li> -->
+                <!-- <li><a href="/login" style="color: white;">LOGIN</a></li> -->
+                <!-- <li><a href="/Profile"style="color: white;">REGISTER</a></li> -->
+                <li><a href="/database_input" style="color: white;">ADD NEW</a></li>
+                <li><a href="/admin" style="color: white;">UPDATE COMPANIES</a></li>
+                <li><a href="/all_clg_admin" style="color: white;">COLLEGE_ADMINS</a></li>
+                <!-- <li><a href="#"style="color: white;">SEND NOTIFICATION</a></li> -->
+                <!-- <li><a href="/all_student_info" style="color: white;">USER-INFO</a></li> -->
+                <li><a href="/clg_admin" style="color: white;">LOG-OUT</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <br><br>
+    <h2 class="heading">List of Companies</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Company name</th>
+            <th>Marks</th>
+            <th>CGPA</th>
+            <th>Backlog</th>
+            <th>Company link</th>
+            <th>About</th>
+            <th>Actions</th>
+        </tr>
+        <% if(company.length> 0){ %>
+            <% for(var i=0; i < company.length; i++){ %>
+                <tr>
+                    <td><%- company[i].company_name %></td>
+                    <td><%- company[i].marks %></td>
+                    <td><%- company[i].cgpa %></td>
+                    <td><%- company[i].backlogs %></td>
+                    <td><a href="<%- company[i].company_link %>" target="_blank"><%- company[i].company_link %></a></td>
+                    <td><a href="<%- company[i].About %>">Know More</a></td>
+                    <td><a href="javascript:void(0);"
+                            onclick="delete_record(this, '<%- company[i].company_name %>')">Delete</a></td>
+                </tr>
+                <% } %>
+                    <% }else{ %>
+                        <h1>You are not eligible for any Company</h1>
+                        <% } %>
+                            <tr>
+
+
+                            </tr>
+    </table>
+    <div style="color: white;" id="response"></div>
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    function delete_record(link, company_name) {
+        var req = new XMLHttpRequest();
+        req.open("GET", "/delete_record?company_name=" + company_name, true);
+        req.send();
+        req.onreadystatechange = function () {
+            if (req.readyState == 4 && req.status == 200) {
+                document.getElementById("response").innerText = req.responseText;
+                // Remove the row from the table
+                link.parentElement.parentElement.remove();
+            }
+        }
+    }
+</script>

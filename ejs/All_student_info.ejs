@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admincss.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>User Info</title>
+</head>
+
+<body class="bodycolor">
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo" behavior="scroll" direction="LEFT" scrollamount="1"> <a
+                    href="/admin/Mainpage_html/mainpage"
+                    class="link_main">SELF&nbsp;ANALYSIS&nbsp;&amp;&nbsp;PLACEMENT</a></h3>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <!-- <li><a href="/sap">HOME</a></li> -->
+                <!-- <li><a href="#">CONTACTS</a></li> -->
+                <!-- <li><a href="/login" style="color: white;">LOGIN</a></li> -->
+                <!-- <li><a href="/Profile"style="color: white;">REGISTER</a></li> -->
+
+                <!-- <li><a href="#"style="color: white;">SEND NOTIFICATION</a></li> -->
+                <li><a href="/add_students" style="color: white;">ADD NEW</a></li>
+                <li><a href="/all_student_info" style="color: white;">USER-INFO</a></li>
+                <li><a href="/clg_admin" style="color: white;">LOG-OUT</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+
+    <br>
+    <h2 class="heading">User's Information</h2>
+    <br>
+    <div>
+        <table>
+
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+                <th>marks</th>
+                <th>cgpa</th>
+                <th>backlogs</th>
+                <th>domain</th>
+                <th>Send Notification to</th>
+            </tr>
+            <% if(company.length> 0){ %>
+                <% for(var i=1; i < company.length; i++){ %>
+                    <tr>
+                        <td>
+                            <%= company[i].name %>
+                        </td>
+                        <td>
+                            <%= company[i].email %>
+                        </td>
+                        <td>
+                            <%= company[i].password %>
+                        </td>
+                        <td>
+                            <%= company[i].marks %>
+                        </td>
+                        <td>
+                            <%= company[i].cgpa %>
+                        </td>
+                        <td>
+                            <%= company[i].backlogs %>
+                        </td>
+                        <td>
+                            <%= company[i].domain %>
+                        </td>
+                        <td><a href="/notification">
+                                <%= company[i].name %>
+                            </a></td>
+                    </tr>
+                    <% } %>
+                        <% } %>
+
+                            <tr>
+
+                            </tr>
+
+
+        </table>
+    </div>
+</body>
+
+</html>

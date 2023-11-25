@@ -1,0 +1,40 @@
+table{
+    margin: auto;
+    overflow: hidden;
+    position: inherit;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(130, 227, 197);
+    border-radius: 10px;
+    border: "1px";
+    border-color:"1px solid black";
+}
+.heading{
+    text-align: center;
+    color: white;
+}
+.bodycolor{
+    text-align: center;
+    background-color:dimgrey;
+    
+    border-radius: 10px;
+}
+
+.con-link {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.connect{
+    display: flex;
+    justify-content:space-around;
+    padding: 20px;
+}

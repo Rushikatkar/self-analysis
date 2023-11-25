@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    .main {
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .navbar {
+        width: 100%;
+        height: 75px;
+        margin: auto;
+        background-color: rgb(60, 59, 59);
+    }
+
+    .icon {
+        width: 200px;
+        float: left;
+        height: 70px;
+    }
+
+    .logo {
+
+        color: white;
+        font-size: 25px;
+        font-family: Arial;
+        padding-left: 20px;
+        float: left;
+        margin-right: 80px;
+        padding-top: 10px;
+        margin-top: 10px
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        width: 800px;
+        float: right;
+        height: 70px;
+        text-emphasis-color: black;
+        justify-content: space-around;
+
+    }
+
+    ul {
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul li {
+        list-style: none;
+        margin-left: 35px;
+        margin-top: 25px;
+        font-size: 14px;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: Arial;
+        font-weight: bold;
+        transition: 0.4s ease-in-out;
+    }
+
+    ul li a:hover {
+        color: #ff7200;
+    }
+
+    .link_main {
+        color: white;
+        text-decoration: none;
+    }
+
+    .heading {
+        text-align: center;
+        color: white;
+    }
+
+    body {
+        text-align: center;
+        background-color: dimgrey;
+        border-radius: 10px;
+    }
+
+    form {
+        margin-top: 1%;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        margin: auto;
+        padding-top: 10px;
+        overflow: hidden;
+        position: inherit;
+        text-align: center;
+        background-color: rgb(130, 227, 197);
+        border-radius: 10px;
+        border: "1px";
+        border-color: "1px solid black";
+    }
+
+    input[type=text],
+    input[type=number] {
+        width: 90%;
+        padding: 5px;
+        overflow: hidden;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        position: inherit;
+        position: relative;
+
+
+    }
+
+    input[type=submit] {
+        margin-top: 10px;
+        width: auto;
+        padding: 10px;
+        background-color: rgb(33, 218, 33);
+        border-color: aliceblue;
+        margin-bottom: 8px;
+        border: none;
+        border-radius: 8px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo" behavior="scroll" direction="LEFT" scrollamount="1"> <a
+                    href="/admin/Mainpage_html/mainpage"
+                    class="link_main">SELF&nbsp;ANALYSIS&nbsp;&amp;&nbsp;PLACEMENT</a></h3>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <!-- <li><a href="/sap">HOME</a></li> -->
+                <!-- <li><a href="#">CONTACTS</a></li> -->
+                <!-- <li><a href="/login" style="color: white;">LOGIN</a></li> -->
+                <!-- <li><a href="/Profile"style="color: white;">REGISTER</a></li> -->
+                <li><a href="/add_students" style="color: white;">ADD NEW</a></li>
+                <!-- <li><a href="#"style="color: white;">SEND NOTIFICATION</a></li> -->
+                <li><a href="/all_student_info" style="color: white;">USER-INFO</a></li>
+                <li><a href="/clg_admin" style="color: white;">LOG-OUT</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <form action="" method="post">
+        <h2>Add New student to the Database Below </h2>
+        <div>
+            <label for="">Student Name:</label>
+            <input type="text" name="company_name" id="company_name" value=""><br>
+            <label for="">Marks:</label>
+            <input type="number" name="marks" id="marks" value="marks"><br>
+            <label for="">CGPA:</label>
+            <input type="number" name="cgpa" id="cgpa" value="cgpa"><br>
+            <label for="">Backlogs:</label>
+            <input type="number" name="backlog" id="backlog" value="backlog"><br>
+            <input type="submit" value="ADD">
+
+        </div>
+    </form>
+</body>
+
+</html>

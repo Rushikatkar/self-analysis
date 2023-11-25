@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <title>Contact</title>
+    
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+ *{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Roboto',sans-serif;
+    font-size:18px;
+ }
+
+ body{
+    display:flex;
+    justify-content:center;
+     align-items:center;
+    height:100;
+    background:#ecebeb;
+    /*fallback for old browsers*/
+    background:-webkit-linear-gradient(to right,#29ffc6,#20e3b2,#0cebeb);
+    /*Chrome 10-25,Safari 5.1-6*/
+background:linear-gradient(to right,#29ffc6,#20e3b2,#0cebeb);
+/*W3C,IE 10+/Edge,Firefox 16+,Chrome 26+,Opera 12+,Safari 7+*/
+ }
+
+ .form{
+
+   width:500px;
+   padding:6px;
+}
+input,textarea{
+   width:100%;
+   padding:6px;
+   outline:none;
+
+   border:none;
+   margin:6px 0px;
+}
+
+#btn{
+    width:150px;
+    padding:6px;
+    cursor:pointer;
+}
+
+
+</style>
+
+<body>
+  <div class="form">
+    <form method="post">
+          <input type="text"placeholder="Name" id="name"autocomplete="off" name="name">
+          <input type="text"placeholder="Subject" id="subject"autocomplete="off"name="subject">
+          <input type="email"placeholder="Email" id="email"autocomplete="off" name="email">
+          <textarea id="message"placeholder="Message" cols="30"rows="10" name="massage"></textarea>
+          <button id="btn">Send</button>
+    </form>
+</div>
+                                                               
+                                                                  
+                                                                    
+                                                                          
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script>
+  var btn=document.getElementById('btn');
+  btn.addEventListener('click',function(e){
+        e.preventDefault()
+        var name=document.getElementById('name').value;
+        var email =document.getElementById('email').value;
+        var subject=document.getElementById('subject').value;
+        var message=document.getElementById('message').value;
+        var body='name:'+name+'<br/> email:'+email+'<br/> subject'
+         subject+'<br/> message'+message;
+          
+           
+
+
+
+
+
+        Email.send({
+    Host : "smtp.gmail.com",
+    Username : "katkarr772@gmail.com",
+    Password : "E5E6809712F5F81A3AFD0D221056872DA1BE",
+    To : email,
+    From : "katkarr772@gmail.com",
+    Subject : subject,
+    Body : body
+}).then(
+  message => alert(message)
+);
+  });
+
+</script>
+</html>

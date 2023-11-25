@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>All Company List</title>
+</head>
+<style>
+    table {
+        margin: auto;
+        overflow: hidden;
+        position: inherit;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(130, 227, 197);
+        border-radius: 10px;
+        border: "1px";
+        border-color: "1px solid black";
+    }
+
+    .heading {
+        text-align: center;
+        color: white;
+    }
+
+    body {
+        text-align: center;
+        background-color: dimgrey;
+
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo" behavior="scroll" direction="LEFT" scrollamount="1"> <a href="/sap"
+                    class="link_main">SELF&nbsp;ANALYSIS&nbsp;&amp;&nbsp;PLACEMENT</a></h3>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <!-- <li><a href="/sap">HOME</a></li> -->
+                <!-- <li><a href="#">CONTACTS</a></li> -->
+                <!-- <li><a href="/login" style="color: white;">LOGIN</a></li> -->
+                <!-- <li><a href="/Profile"style="color: white;">REGISTER</a></li> -->
+                <li><a href="/database_input" style="color: white;">ADD NEW</a></li>
+                <li><a href="/admin" style="color: white;">UPDATE COMPANIES</a></li>
+                <li><a href="/all_clg_admin" style="color: white;">COLLEGE_ADMINS</a></li>
+                <!-- <li><a href="#"style="color: white;">SEND NOTIFICATION</a></li> -->
+                <!-- <li><a href="/all_student_info" style="color: white;">USER-INFO</a></li> -->
+                <li><a href="/clg_admin" style="color: white;">LOG-OUT</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <br><br>
+    <h2 class="heading">List of College Admins</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Admin name</th>
+            <th>College Name</th>
+            <th>Email Address</th>
+            <th>Contact</th>
+        </tr>
+        <% if(admins.length> 0){ %>
+            <% for(var i=0; i<admins.length; i++){ %>
+                <tr>
+                    <td> <%- admins[i].admin_name %> </td>
+                    <td><%- admins[i].clg_name %></td>
+                    <td><%- admins[i].email %></td>
+                    <td><a href="/contact">Contact</a></td>
+
+                </tr>
+                <% } %>
+                    <% }else{ %>
+                        <h1>You are not eligible for any Company</h1>
+                        <% } %>
+                            <tr>
+
+
+                            </tr>
+    </table>
+    <div style="color: white;" id="response"></div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update-record</title>
+</head>
+
+<body>
+    <form onsubmit="updateForm()">
+        <input type="text" name="company_name" id="company_name">
+        <br>
+        <input type="number" name="marks" id="marks">
+        <br>
+        <input type="number" name="cgpa" id="cgpa">
+        <br>
+        <input type="number" name="backlogs" id="backlogs">
+        <br>
+        <input type="text" id="company_link">
+        <br>
+
+        <input type="submit" value="submit">
+    </form>
+
+
+</body>
+
+</html>
+<script>
+    function updateForm() {
+        var company_name = documnent.getElementByTagName('input')[0].value;
+        var marks = documnent.getElementByTagName('input')[1].value;
+        var cgpa = documnent.getElementByTagName('input')[2].value;
+        var backlogs = documnent.getElementByTagName('input')[3].value;
+        var company_link = documnent.getElementByTagName('input')[4].value;
+
+        var req = new XMLHttpRequest();
+
+        req.open("POST", "/update-record");
+        req.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+        req.send("company_name=" + company_name + "&marks=" + marks + "&cgpa=" + cgpa + "&backlogs" + backlogs + "company_link" + company_link);
+
+        req.onreadystatechange = function () {
+            if (req.readyState == 4 && req.status == 200) {
+                document.getElementById("response").innerText = req.responseText;
+                setTimeout(function () {
+                    window.open('/admin', '_self');
+
+                }, 1000);
+            }
+        };
+
+    }
+</script>

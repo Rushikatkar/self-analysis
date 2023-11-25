@@ -1,0 +1,14 @@
+new Requirements--
+		1. Company recomendation system according the user's skills and qualification 
+		2. daily and weekly tests on website and prepare for any type of company i.e. apptitude test system
+Current Requirements--
+		1. admin profile complition -- 
+			1.update profile of company
+			2.delete profile of company
+		2. user profile complition -- 
+			1.update profile of user
+			2.delete profile of user
+		3. company profile 
+		4. Notification system
+			-- Website gives notification to the all user's when a criteri'a of any company get changed automatically or manually.
+			-- admin also send notification to the all user's at a time or individually also.

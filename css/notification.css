@@ -1,0 +1,38 @@
+table{
+    margin: auto;
+    overflow: hidden;
+    position: inherit;
+    width: 100%;
+    text-align: center;
+    background-color:rgb(130, 227, 197);
+    border-radius: 10px;
+    border: "1px";
+    border-color:"1px solid black";
+}
+.heading{
+    text-align: center;
+    color: white;
+}
+body{
+    text-align: center;
+    background-color:dimgrey;
+    
+    border-radius: 10px;
+}
+input[type=submit]{
+    margin-top: 10px;
+    width: auto;
+    padding: 10px;
+    background-color:rgb(33, 218, 33);
+    border-color: aliceblue;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+}
+.table-body,.message{
+    border-radius: 8px;
+}
+textarea{
+    border-radius: 8px;
+
+}

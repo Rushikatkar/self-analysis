@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="notification.css">
+    <title>Send Messages</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h3 class="logo" behavior="scroll" direction="LEFT" scrollamount="1"> <a href="/sap" class="link_main">SELF&nbsp;ANALYSIS&nbsp;&amp;&nbsp;PLACEMENT</a></h3>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <!-- <li><a href="/sap">HOME</a></li> -->
+                <!-- <li><a href="#">CONTACTS</a></li> -->
+                <li><a href="/login" style="color: white;">LOGIN</a></li>
+                <!-- <li><a href="/Profile"style="color: white;">REGISTER</a></li> -->
+                <li><a href="/database_input"style="color: white;">ADD NEW</a></li>
+                <li><a href="/admin"style="color: white;">UPDATE COMPANIES</a></li>
+                <li><a href="/userinfo"style="color: white;">USER-INFO</a></li>
+                <li><a href="/login"style="color: white;">LOG-OUT</a></li>
+                <li><a href="/notification"style="color: white;">SEND NOTIFICATION</a></li>
+            </ul>
+        </div>
+       
+
+    </div> 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col dashboard-nav ">
+                <div class="jumbotron body-ejs">
+                    <br>
+                    <h3 class="text-center"style="color: white;">Write a message for users...</h3>
+                    <br>
+                    <hr>
+                    <form name="grades" action="" method="post" >
+                    <table  border="1px solid black" height="320px" width="100%">
+                        <tr class="table-header">
+                            <th width="80%" class="text-center">Write your message here ..</th>
+                            <th width="20%">Date</th>
+                        </tr>                         
+                        <tr class="table-body">
+                            <td class="message">
+                               <textarea name="message"  cols="90" rows="10" required>Hello students !! This is admin.. </textarea>
+                            </td>
+                            <td>
+                                <input type="date" name="date" required>
+                            </td>
+                        </tr>
+                           
+                    </table>
+                    <br>
+                    <input type="submit" class="btn btn-success" value="Send Message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
